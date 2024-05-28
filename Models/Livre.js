@@ -24,7 +24,7 @@ Livre.init({
         type : DataTypes.DATE,
         allowNull : false
     },
-    FK_AUTEUR : {
+    LI_Auteur : {
         type : DataTypes.INTEGER,
         allowNull : false 
     },

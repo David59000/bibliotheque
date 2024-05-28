@@ -29,9 +29,10 @@ class ClientController {
   }
   async addClient(request, result) {
     try {
-      const client = await ClientService.addClient(request.body);
+      const client = await ClientService.addClientemprunteur(request.body);
       result.json(client);
     } catch (error) {
+      console.log = "error"
       result.status(500);
       result.json({
         error: "Une erreur est survenue lors de l'insertion du client",
