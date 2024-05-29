@@ -1,20 +1,22 @@
+const { log } = require("console");
 const TransactionEmprunterService = require("../Services/TransactionEmprunterService");
 
 class TransactionEmprunterController{
     
-    async getAllTransaction(request,result){
+    async getAllTransactionEmprunter(request,result){
         try {
-            const Transactions = await TransactionEmprunterService.getAllTransaction();
+            const Transactions = await TransactionEmprunterService.getAllTransactionEmprunter();
             result.json(Transactions);
         } catch (error) {
             result.status(500);
+            // console.log = "error"
             result.json({error : "Une erreur est survenue lors de la récupération des transactions"});
         }
     }
 
-    async getTransactionByID(request,result){
+    async getTransactionEmprunterByID(request,result){
         try {
-            const transaction = await TransactionEmprunterService.getTransactionByID(request.params.id);
+            const transaction = await TransactionEmprunterService.getTransactionEmprunterByID(request.params.id);
             result.json(transaction);
         } catch (error) {
             result.status(500);
@@ -23,7 +25,7 @@ class TransactionEmprunterController{
         }
         }
 
-        async addTransaction(request, result) {
+        async addTransactionEmprunter(request, result) {
             try {
               const transaction = await TransactionEmprunterService.addTransaction(request.body);
               result.json(transaction);
@@ -36,9 +38,9 @@ class TransactionEmprunterController{
             }
           }
 
-          async removeTransaction(request, result) {
+          async removeTransactionEmprunter(request, result) {
             try {
-                await TransactionEmprunterService.removeTransaction(request.params.id);
+                await TransactionEmprunterService.removeTransactionEmprunter(request.params.id);
                 result.json({message : "La transaction a bien été supprimée"});
             } catch (error) {
                 result.status(500);
@@ -48,12 +50,13 @@ class TransactionEmprunterController{
             }
           }
 
-          async updateTransaction(request, result){
+          async updateTransactionEmprunter(request, result){
             try {
-                const transaction = await TransactionEmprunterService.updateTransaction(request.params.id, request.body);
+                const transaction = await TransactionEmprunterService.updateTransactionEmprunter(request.params.id, request.body);
                 result.json(transaction);
             } catch (error) {
                 result.status(500);
+                console.log =("error")
                 result.json({error : "Une erreur est survnue lors de la modification de la transaction"})
                 
             }
