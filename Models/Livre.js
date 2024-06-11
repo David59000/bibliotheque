@@ -24,14 +24,10 @@ Livre.init({
         type : DataTypes.DATE,
         allowNull : false
     },
-    LI_Auteur : {
-        type : DataTypes.INTEGER,
-        allowNull : false 
-    },
 },{
     sequelize,
     modelName : 'Livre',
-    tableName: 'livres',
+    tableName: 'livre',
     timestamps: false
 
 })

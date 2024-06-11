@@ -2,17 +2,17 @@
 const {Model, DataTypes} = require('sequelize');
 // Vient de notre fichier Datatypes.js
 const sequelize = require('../Config/Sequelize');
-const TransactionEmprunter = require('./TransactionEmprunter');
 // const Compte = require('./Compte');
 const bcrypt = require('bcrypt');
 
 class Client extends Model{
 
-        async validatePassword(password) {
-            return await bcrypt.compare(password, this.CL_Password);
-        }
-
+    async validatePassword(password) {
+        return await bcrypt.compare(password, this.CL_Password);        
+    }
+    
 }
+
 
 Client.init({
     CL_ID : {
@@ -56,7 +56,7 @@ Client.init({
 }, {
     sequelize,
     modelName : 'Client',
-    tableName: 'Clientemprunteur',
+    tableName: 'Client',
     timestamps: false,
     hooks : {
         beforeCreate : async (clientemprunteur) => {

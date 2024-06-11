@@ -4,9 +4,11 @@ const TransactionEmprunterService = require("../Services/TransactionEmprunterSer
 class TransactionEmprunterController{
     
     async getAllTransactionEmprunter(request,result){
+      console.log("coucou")
         try {
-            const Transactions = await TransactionEmprunterService.getAllTransactionEmprunter();
-            result.json(Transactions);
+            console.log("object")
+            const transactions = await TransactionEmprunterService.getAllTransactionEmprunter();
+            result.json(transactions);
         } catch (error) {
             result.status(500);
             // console.log = "error"

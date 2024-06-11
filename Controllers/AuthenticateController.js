@@ -6,8 +6,10 @@ class AuthenticateController{
 
     async register(request, result){
         try {
-            const token = await AuthenticateService.register(request.body);
-            result.json({token : token});
+            console.log("controller register",request.body)
+            const client = await AuthenticateService.register(request.body);
+            result.json({client : client,confirmationRegister : "Votre inscription est réussie"});
+        
         } catch (error) {
             result.status(500)
             result.json({error : "Une erreur est survenue lors de de l'inscription"})
@@ -16,9 +18,10 @@ class AuthenticateController{
 
     async login(request, result){
         try {
+            console.log(request.body)
             const {email, password} = request.body;
             const token = await AuthenticateService.login(email, password);
-            result.json({token : token})
+            result.json({token : token,confirmationConnexion : "Votre connexion est réussie"})
         } catch (error) {
             result.status(401)
             result.json({error : "Mot de passe ou email incorrect"});

@@ -24,11 +24,11 @@ TransactionEmprunter.init({
         type : DataTypes.DATE,
         allowNull : false
     },
-    FK_Emprunteur : {
+    CL_ID : {
         type : DataTypes.INTEGER,
         allowNull : true 
     },
-    FK_Livre : {
+    LI_ID : {
         type : DataTypes.INTEGER,
         allowNull : true 
     },

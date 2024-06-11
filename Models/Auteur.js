@@ -29,7 +29,7 @@ Auteur.init({
 {
     sequelize,
     modelName : 'Auteur',
-    tableName: 'auteurs',
+    tableName: 'auteur',
     timestamps: false
 
 })

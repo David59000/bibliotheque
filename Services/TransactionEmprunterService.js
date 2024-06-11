@@ -1,17 +1,18 @@
 const TransactionEmprunter = require("../Models/TransactionEmprunter");
 
 class TransactionEmprunterService {
-    async getAllTransactionemprunter(){
+    async getAllTransactionEmprunter(){
+        console.log("service")
         return await TransactionEmprunter.findAll();
     }
-    async getTransactionemprunterByID(transactionEmprunterID){
+    async getTransactionEmprunterByID(transactionEmprunterID){
         return await TransactionEmprunter.findByPk(transactionEmprunterID);
     }
-    async addTransactionemprunter(transactionEmprunter){
+    async addTransactionEmprunter(transactionEmprunter){
         return await TransactionEmprunter.create(transactionEmprunter)
     }
 
-    async removeTransactionemprunter(transactionEmprunterID){
+    async removeTransactionEmprunter(transactionEmprunterID){
         return await TransactionEmprunter.destroy({
             where : {TR_ID : transactionEmprunterID}
         })
